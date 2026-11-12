@@ -13,7 +13,11 @@ def top_ten(subreddit):
         print(None)
         return
     url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
-    headers = {'User-Agent': 'python:alu.api.advanced:v1.0 (by /u/otieno0928)'}
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+                      'AppleWebKit/537.36 (KHTML, like Gecko) '
+                      'Chrome/115.0.0.0 Safari/537.36'
+    }
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
         try:
